@@ -4,7 +4,8 @@ class Ride
               :admission_fee,
               :excitement,
               :total_revenue,
-              :rider_log
+              :rider_log,
+              :total_rides
 
   def initialize(data)
     @name = data[:name]
@@ -13,6 +14,7 @@ class Ride
     @excitement = data[:excitement]
     @total_revenue = 0
     @rider_log = {}
+    @total_rides = 0
   end
 
   def board_rider(rider)
@@ -21,10 +23,12 @@ class Ride
         rider_log[rider] = 1
         rider.spending_money -= admission_fee
         @total_revenue += admission_fee
+        @total_rides += 1
       else
         rider_log[rider] += 1
         rider.spending_money -= admission_fee
         @total_revenue += admission_fee
+        @total_rides += 1
       end
     end
   end
