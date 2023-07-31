@@ -4,21 +4,27 @@ require "./lib/carnival"
 
 RSpec.describe Carnival do
   describe "#initialize" do
-    carnival1 = Carnival.new(18)
+    it "exists" do
+      carnival1 = Carnival.new(18)
 
-    expect(carnival1).to be_a(Carnival)
+      expect(carnival1).to be_a(Carnival)
+    end
   end
   
   xdescribe "#duration" do
-    carnival1 = Carnival.new(18)
-    
-    expect(carnival1.duration).to eq(18)
+    it "returns carnival duration" do
+      carnival1 = Carnival.new(18)
+      
+      expect(carnival1.duration).to eq(18)
+    end
   end
   
   xdescribe "#rides" do
-    carnival1 = Carnival.new(18)
+    it "returns array of carnival rides" do
+      carnival1 = Carnival.new(18)
 
-    expect(carnival1.rides).to eq([])
+      expect(carnival1.rides).to eq([])
+    end
   end
   
   xdescribe "#add_ride" do
