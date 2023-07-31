@@ -76,9 +76,9 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor3)
 
       ride2.board_rider(visitor1)
-      ride2.board_rider(visitor3)
+      ride2.board_rider(visitor2)
 
-      ride3.board_rider(visitor2)
+      ride3.board_rider(visitor3)
 
       expect(carnival1.most_popular_ride).to eq(ride1)
     end
@@ -113,9 +113,9 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor3)
 
       ride2.board_rider(visitor1)
-      ride2.board_rider(visitor3)
+      ride2.board_rider(visitor2)
 
-      ride3.board_rider(visitor2)
+      ride3.board_rider(visitor3)
 
       expect(carnival1.most_profitable_ride).to eq(ride2)
     end
@@ -150,7 +150,7 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor3)
 
       ride2.board_rider(visitor1)
-      ride2.board_rider(visitor2)
+      ride2.board_rider(visitor3)
 
       ride3.board_rider(visitor3)
 
