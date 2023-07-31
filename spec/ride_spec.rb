@@ -50,6 +50,27 @@ RSpec.describe Ride do
     end
   end
   
+  describe "#total_rides" do
+    it "returns total rides of ride" do
+      ride1 = Ride.new({ name: 'Carousel', min_height: 24, admission_fee: 1, excitement: :gentle })
+      
+      expect(ride1.total_rides).to eq(0)
+
+      visitor1 = Visitor.new('Bruce', 54, '$10')
+      expect(visitor1).to be_a(Visitor)
+      visitor2 = Visitor.new('Tucker', 36, '$5')
+      expect(visitor2).to be_a(Visitor)
+
+      visitor1.add_preference(:gentle)
+      visitor2.add_preference(:gentle)
+
+      ride1.board_rider(visitor1)
+      ride1.board_rider(visitor2)
+      ride1.board_rider(visitor1)
+
+      expect(ride1.total_rides).to eq(3)
+    end
+  end
   describe "#board_rider" do
     it "adds a visitor to the ride" do
       ride1 = Ride.new({ name: 'Carousel', min_height: 24, admission_fee: 1, excitement: :gentle })
