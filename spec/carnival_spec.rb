@@ -11,7 +11,7 @@ RSpec.describe Carnival do
     end
   end
   
-  xdescribe "#duration" do
+  describe "#duration" do
     it "returns carnival duration" do
       carnival1 = Carnival.new(18)
       
@@ -19,7 +19,7 @@ RSpec.describe Carnival do
     end
   end
   
-  xdescribe "#rides" do
+  describe "#rides" do
     it "returns array of carnival rides" do
       carnival1 = Carnival.new(18)
 
@@ -27,7 +27,7 @@ RSpec.describe Carnival do
     end
   end
   
-  xdescribe "#add_ride" do
+  describe "#add_ride" do
     it "adds ride to the carnival" do
       carnival1 = Carnival.new(18)
       
@@ -47,7 +47,7 @@ RSpec.describe Carnival do
     end
   end
   
-  xdescribe "#most_popular_ride" do
+  describe "#most_popular_ride" do
     it "returns the most popular ride" do
       carnival1 = Carnival.new(18)
 
@@ -84,7 +84,7 @@ RSpec.describe Carnival do
     end
   end
 
-  xdescribe "#most_profitable_ride" do
+  describe "#most_profitable_ride" do
     it "returns the most profitable ride" do
       carnival1 = Carnival.new(18)
 
@@ -121,7 +121,7 @@ RSpec.describe Carnival do
     end
   end
 
-  xdescribe "#total_revenue" do
+  describe "#total_revenue" do
     it "returns total revenue of carnival" do
       carnival1 = Carnival.new(18)
 
@@ -136,9 +136,9 @@ RSpec.describe Carnival do
       visitor1.add_preference(:gentle)
       
       visitor2.add_preference(:gentle)
-      visitor2.add_preference(:thrilling)
-
+      
       visitor3.add_preference(:gentle)
+      visitor3.add_preference(:thrilling)
       
       carnival1.add_ride(ride1)
       carnival1.add_ride(ride2)
@@ -150,9 +150,9 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor3)
 
       ride2.board_rider(visitor1)
-      ride2.board_rider(visitor3)
+      ride2.board_rider(visitor2)
 
-      ride3.board_rider(visitor2)
+      ride3.board_rider(visitor3)
 
       expect(carnival1.total_revenue).to eq(16)
     end
