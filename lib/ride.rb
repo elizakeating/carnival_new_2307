@@ -18,7 +18,7 @@ class Ride
   end
 
   def board_rider(rider)
-    if rider.height >= min_height && rider.preferences.include?(excitement)
+    if rider.height >= min_height && rider.preferences.include?(excitement) && rider.spending_money >= admission_fee
       if !rider_log.has_key?(rider)
         rider_log[rider] = 1
         rider.spending_money -= admission_fee
