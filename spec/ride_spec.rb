@@ -58,6 +58,9 @@ RSpec.describe Ride do
       expect(visitor1).to be_a(Visitor)
       visitor2 = Visitor.new('Tucker', 36, '$5')
       expect(visitor2).to be_a(Visitor)
+      
+      visitor1.add_preference(:gentle)
+      visitor2.add_preference(:gentle)
 
       ride1.board_rider(visitor1)
       ride1.board_rider(visitor2)
